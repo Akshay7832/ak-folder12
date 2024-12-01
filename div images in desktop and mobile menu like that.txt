@@ -1,0 +1,28 @@
+/* Mobile Styles */
+@media (max-width: 767px) {
+    /* Add your mobile-specific CSS rules here */
+    .your-image-class {
+        background-image: url('mobile-image.jpg');
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+    /* Add your desktop-specific CSS rules here */
+    .your-image-class {
+        background-image: url('desktop-image.jpg');
+    }
+}
+
+
+<div class="your-image-class"></div>
+
+
+
+or like this we can add ------------------------------------------
+
+
+<div class="your-image-container">
+    <img class="mobile-image" src="mobile-image.jpg" alt="Mobile Image">
+    <img class="desktop-image" src="desktop-image.jpg" alt="Desktop Image">
+</div>

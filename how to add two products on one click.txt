@@ -1,0 +1,49 @@
+<script>
+  $(document).ready(function() {
+    $(".newcart").click(function() {
+      var selectedBundle = $('input[name=bundles]:checked').closest('a');
+      var handle = selectedBundle.data('handle');
+      var variantId = selectedBundle.attr('value');
+      var productId = $(this).attr('data-variant_id');
+
+      // First AJAX request to add the selected bundle to the cart
+      $.ajax({
+        type: 'POST',
+        url: '/cart/add.js',
+        data: {
+          quantity: 1,
+          id: variantId,
+        },
+        dataType: 'json',
+        success: function (data) {
+          console.log('Item added to cart successfully!');
+          console.log(data);
+
+          // Second AJAX request to add the product with the given productId to the cart
+          $.ajax({
+            type: 'POST',
+            url: '/cart/add.js',
+            data: {
+              quantity: 1,
+              id: productId,
+            },
+            dataType: 'json',
+            success: function (data) {
+              console.log('Item added to cart successfully!');
+              console.log(data);
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+              console.error('Error adding item to cart:', errorThrown);
+            },
+          });
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+          console.error('Error adding item to cart:', errorThrown);
+        },
+      });
+    });
+  });
+</script>
+
+
+is code ka use hme isliye kia ki hm ek click pe do product add kr ske to fir hme ek script m dono ka use kia alag script ni bn skti h to jab ek success ho gyi to fir doosri jo h bo chll jaye

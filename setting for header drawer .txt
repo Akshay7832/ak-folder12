@@ -1,0 +1,24 @@
+   {% if section.settings.nav_type == default %}
+   Akshay
+    {% else %}
+          ya kuch or b yha de skte h
+           
+            {% endif %}
+			
+			
+			
+			
+			   "type": "select",
+      "id": "nav_type",
+      "label": "NAV-TYPE",
+      "default": "default",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "drawer",
+          "label": "Drawer"
+        }
+       

@@ -1,0 +1,1 @@
+Blocks m jaise hme pta h do block bnaye ek block ko ek div m call kra diya doosri ko doosri div m call krba diya to jo pehli div ke block honge bo hi ek doosre ke upar replace honge  jo doosre block honge bo usi bloc ke  block honge unse replace honge aise ni goga ki doosre block ko utha kr m use pehle block ke upar daal du bo drag ni hoga

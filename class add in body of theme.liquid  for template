@@ -1,0 +1,8 @@
+{% if template == 'product.wheel' %} template_wheel{% endif %}
+
+
+here this condition is use to add class which template u want to add add the name of template
+
+
+  <body class="gradient  {% if template == 'index' %}home{% endif %}"> aise dete h body par class jaise man lo ki header sabhi template pe ek jaisa chl raha h to jaise hme changes krni sirf home page pe jaise header upar niche krna h  to fir hm usme body ke andr class add kra denge  fir designer us class ko le kr designing krega bo css usi template pe lgegi jis template ko body ki class m template select krke class di hogi 
+ {% if template == 'index' %}home{% else %}other{% endif %}">

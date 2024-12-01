@@ -1,0 +1,11 @@
+<div class="imageandtext page-width container">
+    <!-- Your content goes here -->
+</div>
+
+
+
+is me is class ka use to hota h kyunki isme hm btate h k us section ko full width krna h k side se spacing chodni h full spacing ke liye hm container-fluid lgate h
+
+
+
+

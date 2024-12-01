@@ -1,0 +1,1 @@
+Agar khi par koi class find out na ho ri ho to fir hme theme download krke fir  folder ka path copy karke hm notepad m ja kar ke fir use  ctrl + F krke search krenge fir jha bo class hogi bha par bo files show kr dega

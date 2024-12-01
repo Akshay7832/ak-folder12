@@ -1,0 +1,10 @@
+{% assign metafield = product.metafields.namespace.key %}
+
+{% if metafield %}
+  <p>{{ metafield }}</p>
+{% endif %}
+
+
+
+in this we can get the text from the metafields which are added to the products it can use to fetch the data from  the product  
+and the metafields add in the store go to settings and in custom data then select the field which you want to add

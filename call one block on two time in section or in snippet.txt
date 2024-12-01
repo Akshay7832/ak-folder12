@@ -1,0 +1,98 @@
+   {% for block in section.blocks %}
+          {% if block.type =="image" %}
+ {% if product.handle == block.settings.handlecall %}
+   {% if block.settings.heading != blank %}
+     <h1 class="head">{{ block.settings.heading }}</h1>
+     {% endif %}
+ 
+{% render 'carousel_slider'  %}
+   {% endif %}
+            {% endif %}
+        {% endfor %}
+     
+	 
+	 
+	 -----------------------------------ye snippet file h------------------------ek hi block bna h par fir se use call kraya snippet ke bahr condition lgane ke liye----ki handle ye block.type ka to show ho nahi to ni (product ka handle)
+	 
+<div class="slick marquee">
+  {% for block in section.blocks %}
+    
+    {% if block.type =="image" %}
+      
+     {% if block.settings.carimg != blank %}
+  <div class="slick-slide">
+    <div class="inner">
+      <img src="{{block.settings.carimg|img_url:"master" }}" width="179" height="78"/>
+    </div>
+  </div>
+   {% endif %}
+       {% if block.settings.carimgone != blank %}
+   <div class="slick-slide">
+    <div class="inner">
+      <img src="{{block.settings.carimgone|img_url:"master" }}" width="179" height="78"/>
+    </div>
+   
+  </div>
+  {% endif %}
+       {% if block.settings.carimgtwo != blank %}
+         <div class="slick-slide">
+    <div class="inner">
+      <img src="{{block.settings.carimgtwo|img_url:"master" }}" width="179" height="78"/>
+    </div>
+  </div>
+         {% endif %}
+      {% if block.settings.carimgthree != blank %}
+     <div class="slick-slide">
+    <div class="inner">
+      <img src="{{block.settings.carimgthree|img_url:"master" }}" width="179" height="78"/>
+    </div>
+   
+  </div>
+  {% endif %}
+      {% if block.settings.carimgfour != blank %}
+     <div class="slick-slide">
+    <div class="inner">
+      <img src="{{block.settings.carimgfour|img_url:"master" }}" width="179" height="78"/>
+    </div>
+   
+  </div>
+  {% endif %}
+  {% endif %}
+        
+{% endfor %}
+</div>
+
+<style>
+
+.slick-slide .inner {
+  margin: 0 15px;
+}
+</style>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js"></script>
+
+  
+<script>
+  $(document).ready(function($) {
+   
+  $('.slick.marquee').slick({
+      speed: 5000,
+      autoplay: true,
+      autoplaySpeed: 0,
+      centerMode: true,
+      cssEase: 'linear',
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      variableWidth: true,
+      infinite: true,
+      initialSlide: 1,
+      arrows: false,
+      buttons: false,
+      css: {
+        transform: 'translate3d(0, 0, 0)', // This line ensures smooth continuous movement
+      },
+    });
+
+    
+});
+</script>

@@ -1,0 +1,9 @@
+{% assign metafield = product.metafields.namespace.key %}
+
+{% if metafield %}
+  <p>{{ metafield }}</p>
+{% endif %}
+
+
+
+in this we can get the text from the metafields which are added to the products it can use to fetch the data from  the product 

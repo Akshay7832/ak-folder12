@@ -1,0 +1,64 @@
+
+  <div class="shopcontents">
+    <div class=" firstsec page-width container">
+    <div class="head_subheading">
+      <h2 class="shop_head">{{ section.settings.shoptitle }}</h2>
+      <p class="shop_sub">{{ section.settings.subtitle }}</p>
+    </div>
+    <div class="multi_images">
+      
+      {% for block in section.blocks %}
+        {% if block.type == "image_picker" %}
+        <div class="shopimg">
+          <img src="{{ block.settings.shopimages |img_url:"master"}}">
+        </div>
+      {% endif %}
+        {% endfor %}
+       
+    </div>
+  </div>
+    </div>
+    <!-- <div class="shopheading2" style="background-image: url('{{ section.settings.botanicalimg|img_url:"master" }}'); background-size: cover; background-repeat: no-repeat;">
+      <div class="Botanical">
+        <h2>{{ section.settings.BOTANICAL }}</h2>
+      </div>
+      
+    </div> -->
+    <!-- <div class="collectionone">
+      <div class="shopcollection">
+       
+        {% for products in collections[section.settings.shopcollection].products %}
+          <div class="collect_tittle" style="background-image: url('{{ section.settings.botanicalimg|img_url:"master" }}'); background-size: cover; background-repeat: no-repeat;"> {{ section.settings.shopcollection.title }}</div>
+          <div class="allproducts"> 
+            <img src="{{ products.featured_image|img_url:"master" }}">
+            <h2>{{ products.title }}</h2>
+          <p>{{ products.price }}</p>
+          </div>
+          {% endfor %}
+      </div>
+      
+    </div> -->
+
+   <div class="collectionshop">
+     <div class="collection">
+     <div class="collectiondata">
+       {% for block in section.blocks %}
+          {% if block.type == "collection" %}
+         <div class="collectionone">
+         <div class="collect_tittle" style="background-image: url('{{ block.settings.botanicalimg|img_url:"master" }}'); background-size: cover; background-repeat: no-repeat;"><p>{{block.settings.shopcollection.title}}</p></div>
+          <div class="product page-width container">
+         {% for products in collections[block.settings.shopcollection].products %}
+             <div class="productsdetail">
+               <img src="{{ products.featured_image|img_url:"master" }}">
+                <h2>{{ products.title }}</h2>
+          <p>{{ products.price|money}}</p>
+             </div>
+             {% endfor %}
+          </div>
+         </div>
+        {% endif %}
+         {% endfor %}
+       
+     </div>
+   </div>
+  </div>

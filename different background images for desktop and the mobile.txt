@@ -1,0 +1,12 @@
+<style>
+    @media (max-width: 768px) { /* Adjust the max-width as needed */
+        .hero-background {
+            background-image: url('{{ section.settings.moblogo | image_picker_url: 'image.png' }}');
+        }
+    }
+</style>
+
+  <div class="hero-background background-image background-image--{{ s-ID }} {{ s-SplashWrapper }} {{ section.settings.const1class }}">
+
+
+This is use to make separte background images to desktop or the mobile in kajabi or in shopify also

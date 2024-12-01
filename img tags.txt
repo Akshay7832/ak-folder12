@@ -1,0 +1,34 @@
+quid
+Copy code
+{%- if block.settings.image -%}
+  {%- liquid
+    assign height = block.settings.image.width | divided_by: block.settings.image.aspect_ratio | round
+    if section.settings.image_behavior == 'ambient'
+      assign sizes = '120vw'
+      assign widths = '450, 660, 900, 1320, 1800, 2136, 2400, 3600, 7680'
+    else
+      assign sizes = '100vw'
+      assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+    endif
+  -%}
+
+  {{
+    block.settings.image
+    | image_url: width: 3840
+    | image_tag:
+      loading: 'lazy',
+      height: height,
+      sizes: sizes,
+      widths: widths,
+      class: 'your-class-name'  // Add your desired class name here
+  }}
+
+{%- else -%}
+In the code snippet above, 'your-class-name' represents the class you want to assign to the image tag. Replace 'your-class-name' with the desired class name.
+
+
+
+
+
+User
+image tag in shopify

@@ -1,0 +1,7 @@
+{% if product.compare_at_price > product.price %}
+  {% assign discount_percentage = ((product.compare_at_price - product.price) / product.compare_at_price) * 100 %}
+  <p>Save {{ discount_percentage | round: 0 }}%</p>
+{% endif %}
+
+
+to get the discount

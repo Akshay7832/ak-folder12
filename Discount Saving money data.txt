@@ -1,0 +1,9 @@
+       
+               {% assign original_price = card_product.compare_at_price %}
+              {% assign discounted_price = card_product.price %}
+              {% assign savings = original_price | minus: discounted_price %}
+            {%  if discounted_price < original_price %}
+                <div class="save_money">
+                     Save <strong>{{ savings | money }}</strong> 
+                </div>
+                     {% endif %}       

@@ -1,0 +1,11 @@
+<div class="imageandtext page-width container">
+    <!-- Your content goes here -->
+</div>
+In this example, I've combined the classes imageandtext, page-width, and container in the class attribute of the div element. This assumes that you have existing styles for the imageandtext and container classes, and you're adding the new page-width class to set the maximum width of the div.
+
+Remember to adjust the max-width value in the .page-width class to fit your design requirements. This will ensure that the div element's width adjusts according to the specified maximum width while remaining centered on the page.
+
+
+
+
+

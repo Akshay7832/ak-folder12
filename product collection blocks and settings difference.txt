@@ -1,0 +1,8 @@
+block ka matlab h jaise ki collection h hme uske andar ke sare products chaiye to fir hme setting bnao chaye block mostly sett
+ bnate h taki id leke use loop m chalaye or sara data show ho jaye 
+ 
+ or agr man lo ki collections hi show karbani h ki man lo main title or collection ki image to fir hme block bnana padega taki us block ka use bar bar kar ske or sale coll
+ ka title or image fet karba sake 
+ 
+ or products get karbane ho to fir blocks ka use kreo 
+ or singgle product chayiye to fir hm uski setting b bna skte h
