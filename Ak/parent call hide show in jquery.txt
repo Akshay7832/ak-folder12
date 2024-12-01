@@ -1,0 +1,18 @@
+<script>
+  $(document).ready(function(){
+    $('select[name="options[Variety]"]').change(function(){
+      var x= $(this).val();
+      // alert(x)
+      if(x == 'My Choice (enter selection in "additional Information" box below)'){
+        $('.all_checkbox').parent().removeClass('hide');
+      }else{
+        $('.all_checkbox').parent().addClass('hide');
+      }
+    });
+  });
+</script>
+
+
+
+
+ye select ke liye h ki kisi dropdown ke select pe hide showkrana ho

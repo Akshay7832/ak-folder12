@@ -1,0 +1,26 @@
+ <div class="variant-swatches">
+                  {% for option in product.options_with_values %}
+                    {% if option.name == 'Color' %}
+                      <div class="swatch-wrapper">
+                        <span>{{ option.name }}</span>
+                        <div class="allswatch">
+                          {% for value in option.values %}
+                            <div class="swatch" data-value="{{ value | handle }}">
+                              <span style="background-color: {{ value | downcase }}">{{ value }}</span>
+                              <!--
+                                <span style="background-image: url('{{ product.featured_image | img_url: 'medium' }}')">{{ value }}</span>
+                              -->
+                            </div>
+                          {% endfor %}
+                        </div>
+                      </div>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+				
+				
+				
+				
+				
+				
+				This code is use to show product images as a swtaches where images is come

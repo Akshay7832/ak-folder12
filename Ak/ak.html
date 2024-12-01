@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+ 
+   $(".hello").click(function(){
+ $(".brand").addClass("ak");
+  
+  
+  });
+   $(".hello1").click(function(){
+ $(".brand").removeClass("ak");
+  
+  
+  });
+
+});
+</script>
+<style>
+
+ .brand{
+ display:none;
+ color:red
+ }
+  .ak{
+  display:block
+  }
+</style>
+
+</head>
+<body>
+<p class="brand">hello this is my content</p>
+<p class="product">this content is add to get all the data</p>
+<button class="hello">click</button>
+<button class="hello1">ghytg</button>
+
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+ 
+ This code is use to get the swtaches of the product variant color 
+ 
+ 
+ <div class="variant-swatches">
+                    {% for option in product.options_with_values %}
+                      {% if option.name == 'Color' %}
+                        <div class="swatch-wrapper">
+                          <div class="allswatch" onclick="updateColorName(event)">
+                            {% for value in option.values %}
+                              <div class="swatch" data-value="{{ value | handle }}">
+                                <span style="background-color: {{ value | downcase }}">{{ value }}</span>
+                              </div>
+                            {% endfor %}
+                          </div>
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+                  </div>

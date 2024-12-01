@@ -1,0 +1,21 @@
+           <!-- {% assign customer = customer %}
+{% assign group_pricing_tags = 'Group1,Group2,Group3,Group4,Group5' %} <!-- List all your group tags separated by commas -->
+{% assign group_price = 0.00 | money_without_currency %} <!-- Default price if no group tag matches -->
+
+{% for tag in customer.tags %}
+  {% if tag == 'Group1' %}
+    {% assign group_price = product.metafields.custom.n41_price_1 | money_without_currency %} <!-- Change 'namespace' and 'vip_price' to match your metafields -->
+  {% elsif tag == 'Group2' %}
+    {% assign group_price = product.metafields.custom.n41_price_2 %}
+  {% elsif tag == 'Group3' %}
+    {% assign group_price = product.metafields.custom.n41_price_3 | money_without_currency %}
+  {% elsif tag == 'Group4' %}
+    {% assign group_price = product.metafields.custom.n41_price_4 | money_without_currency %}
+  {% elsif tag == 'Group5' %}
+    {% assign group_price = product.metafields.custom.n41_price_5 | money_without_currency %}
+  {% endif %}
+{% endfor %}
+              
+              
+
+<span class="product-price">{{ group_price }}</span>  

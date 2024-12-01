@@ -1,0 +1,1 @@
+blocks case m use ho rahe honge to bo apas me ek doosre ke upar neccche ho skte h lekin do div m alag alag for loop chl rha h to fir hm use upar neeche kar to skte h par uska content ko koi farak ni padega bo upar neeche ni hoga bo content baise ka baisa hi show krega

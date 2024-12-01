@@ -1,0 +1,107 @@
+this code is in the section homepage first section in Akshau store
+
+isme hum dekh skte h ki age ek block ko hm do jgah call krayenge to fir hum dekh skte h ki dono jaga h ek hi cheej ayegi
+
+
+
+<div class="main_div" style="background-image: url('{{ section.settings.image|img_url:'' }}');  background-repeat: no-repeat;">
+<!--    <div class="backimg">
+    <div class="img"><img src="{{ section.settings.image|img_url:"master" }}" ></div>
+  </div> -->
+
+  <div class="Ak">
+{% for block in section.blocks %}
+  <h1>{{ block.settings.one }}</h1>
+  <p>{{ block.settings.onetwo }}</p>
+  {% endfor %}
+
+  
+</div>
+  <div class="all_data">
+    {% if section.settings.heading != blank  %}
+    <div class="Bigtitle"><h2>{{ section.settings.heading }}</h2> </div>
+    {% endif %}
+    {% if section .settings.title %}
+    <div class="Bigtitle2"><h2>{{ section.settings.title }}</h2> </div>
+    {% endif %}
+    <div class="content">{{ section.settings.rich }} </div>
+     <div class="hello"><button>{{ section.settings.button }} </button></div>
+<!--     {% render "chakraimg"  %} -->
+  </div>
+ 
+<div class="Ak">
+{% for block in section.blocks %}
+  <!-- <h1>{{ block.settings.one }}</h1> -->
+  <p>{{ block.settings.onetwo }}</p>
+  {% endfor %}
+
+  
+</div>
+
+
+
+
+  
+</div>
+{% schema %}
+  {
+    "name": "Section name",
+    "class":"hello",
+    "settings": [
+      {
+        "type":"text",
+        "id":"heading",
+        "label":"BIGTITLE"
+      },
+        {
+        "type":"text",
+        "id":"title",
+        "label":"BIGTITLE2"
+      },
+      {
+        "type":"richtext",
+        "id":"rich",
+        "label":"CONTENT"
+      },
+      {
+        "type":"text",
+        "id":"button",
+        "label":"button"
+      },
+      {
+        "type":"image_picker",
+        "id":"image",
+        "label":"IMAGE"
+      }
+    ],
+    "blocks":[
+      {
+        "type":"text",
+        "name":"hello",
+        "settings":[
+          {
+            "type":"text",
+            "id":"one",
+            "label":"HEADING"
+          },
+          {
+            "type":"text",
+            "id":"onetwo",
+            "label":"HEADING2"
+          }
+        ]
+      }
+    ],
+    "presets":[
+      {
+        "name":"MetBanner"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

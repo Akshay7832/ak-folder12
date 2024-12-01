@@ -1,0 +1,38 @@
+<!--
+  <script>
+    $(document).ready(function() {
+      $(".qqqqq").click(function() {
+        // Find the sibling with class "anssss" and toggle the class "akshay"
+        $(this).siblings(".anssss").toggleClass("akshay");
+      });
+    });
+  </script>
+-->
+<script>
+  $(document).ready(function() {
+    $(".qqqqq").click(function() {
+      // Find the sibling with class "anssss" and toggle the class "akshay"
+      $(this).siblings(".anssss").slideToggle("akshay");
+    });
+  });
+</script>
+<style>
+  .anssss {
+    display: none;
+  }
+
+  .akshay {
+
+    display: block;
+  }
+</style>
+  <div class="hellosunoo">
+                <div class="mainblock">
+				{%for block in section.blocks%}
+                  <div class="qstasns">
+                    <div class="qqqqq">{{ block.settings.oneqs }}</div>
+                    <div class="anssss">{{ block.settings.onesans }}</div>
+                  </div>
+				  {%endfor%}
+                </div>
+              </div>

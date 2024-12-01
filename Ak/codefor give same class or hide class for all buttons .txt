@@ -1,0 +1,19 @@
+
+<!-- <div class="product-variant-tab">
+<div class="first-variant-tab">
+<a href="javascript:void(0)" class="buy-one-time" value="oneTime">Buy One Time</a>
+</div>
+  <div class="second-variant-tab"><a href="javascript:void(0)" class="buy-one-time  active-tab" value="subscription">Subscribe & Save</a> </div>
+</div>
+
+<script>
+$(document).ready(function() {
+jQuery(document).ready(function(){
+    jQuery('.buy-one-time').click(function(event){
+        jQuery('.active-tab').removeClass('active-tab');
+        jQuery(this).addClass('active-tab');     
+        event.preventDefault();
+    });
+});
+});
+</script> -->

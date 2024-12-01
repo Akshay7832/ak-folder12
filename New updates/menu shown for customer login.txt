@@ -1,0 +1,7 @@
+ {% assign handle =  section.settings.menu %}
+    {% if customer %}
+      {% assign handle = settings.hhhhh %}
+    {% endif %}
+    {%- for link in handle.links -%}
+      <li>
+        {%- if link.links != blank -%}

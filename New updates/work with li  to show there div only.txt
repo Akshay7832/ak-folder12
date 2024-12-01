@@ -1,0 +1,30 @@
+$("#more_services li").click(function(e){
+  $(".secondary-services-description").hide();
+  $this = $(this).find(".secondary-services-description");
+  $this.toggle();
+});
+
+
+<ul id="more_services">
+      <li>
+        <p>Work abo...</p>
+      </li>
+      <li>
+        <p>Test text... </p>
+        <div class="secondary-services-description">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </li>
+      <li>
+        <p>Just a sim... </p>
+        <div class="secondary-services-description">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod .</p>
+        </div>
+      </li>
+      <li>
+        <p>Nothing h... </p>
+        <div class="secondary-services-description">
+          <p>Ornare quam viverra orci sagittis eu volutpat odio facilisis mauris.</p>
+        </div>
+      </li>
+    </ul>

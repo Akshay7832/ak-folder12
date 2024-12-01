@@ -1,0 +1,38 @@
+     data-variant_id="{{ product.selected_or_first_available_variant.id }}"          button par de do id 
+   
+   <script>
+                $(document).ready(function(){
+                  $(".product-form__submit").click(function(event){
+                     event.preventDefault();
+                    // alert("hello")
+
+                    var id=$(this).attr('data-variant_id');
+                    console.log(id)
+                    $.ajax({
+                      type:"POST",
+                     url:"/cart/add.js",
+                      data:{"id":id,"quantity":1},
+                      dataType:"json",
+					  		                       properties: { 'your-name' :Gift Note,'your-name':Additional information,'date':date,'Message':Message,},   iska code abhi krna h is code se only product ka maindata get hoga additional ni add hoga
+
+                      async:false,
+                      success:function(){
+                        console.log('result')
+                    window.location.href = '/cart'; 
+                      },
+                      error:function(){
+                        console.log("error")
+                      }
+                    });
+                    
+                     
+                    
+             
+                   });
+                });
+             
+        </script>
+		
+		  isme simple add tocart hoga product without refresh refresh ke liye code lgega abhi
+		
+		

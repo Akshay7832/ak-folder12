@@ -1,0 +1,5 @@
+    $('.bold_options_loaded').on('click', '.bold_option_title', function () {
+        $(this).closest('.bold_option_checkboxmulti').find('.bold_option_element').toggle();
+          var hh =  $(this).html();
+        console.log(hh);
+      });

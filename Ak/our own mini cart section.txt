@@ -1,0 +1,131 @@
+   <script>
+                $(document).ready(function(){
+                  $(".product-form__submit").click(function(event){
+                   
+                    event.preventDefault();
+                   
+                     $(".my_cart").addClass('active');
+                    
+                    var id=$(this).attr('data-variant_id');
+                 // var bundle_name = $('.product-bundle').attr("name")
+                 // var Custom_Bundle = $('.product-bundle').attr('id')  ;
+                      alert(Custom_Bundle);
+                      alert(bundle_name);
+                    
+                     $.ajax({
+                        type:"POST",
+                    url:"/cart/add.js",
+                     
+                       data:{"id":id,"quantity":1,properties:{ 'Custom_Bundle' : bundle_name  }},
+                      dataType:"json",
+                      async:false,
+                      success:function(){
+
+//settimeout ka use isliye kia taki usme hm tim eset krba ske ki cart kitne time ke bad open hoga
+                          
+                   // setTimeout(function(){
+                   //window.location.href="/cart"
+                 // },1000);
+ 
+                console.log("result")
+                       },
+                        error:function(){
+                          console.log("error");
+                        }
+            
+                    });
+
+
+                               
+                   });
+                });
+            
+     
+             
+             
+        </script>
+		
+		   <div class="my_mini_cart">
+  <div class='hide_data'>
+    <div class='hii'><img src="https://cdn.shopify.com/s/files/1/0742/2410/7824/files/cross.png?v=1683353544" class="img1"></div>
+  </div>
+ <form action="{{ routes.cart_url }}" method="post">
+  <div class="my-cart" data-ajax-cart-section>
+    <h2>Cart</h2>
+   
+    {% for item in cart.items %}
+      <div class="my-cart__item">
+        <a href="{{ item.url }}">{{ item.title }}</a>
+        <div>Price: {{ item.final_price | money }}</div>
+         <div> Image:<img src="{{ item.image | img_url:"master" }}"></div>
+        <div>
+          Quantity:
+          <a data-ajax-cart-request-button
+            href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity={{ item.quantity | minus: 1 }}">
+           <i class="bi bi-dash"></i>
+          </a>
+          <input data-ajax-cart-quantity-input="{{ forloop.index }}" value="{{ item.quantity }}" name="updates[]" type="number"/>
+          <a data-ajax-cart-request-button
+            href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity={{ item.quantity | plus: 1 }}">
+            <i class="bi bi-plus-lg"></i></i>
+          </a>
+        </div>
+         <div class="d-flex flex-row">
+                            <a class="remove" data-variant="{{ item.variant.id }}" href="/cart/change?line={{ forloop.index }}&amp;quantity=0">Remove</a>
+                        </div
+        <div data-ajax-cart-messages="{{ item.key }}"></div>
+
+        <div>Total: <strong>{{ item.final_line_price | money }}</strong></div>
+      </div>
+  
+    {% endfor %}
+
+
+
+
+
+    
+     {% assign property_size = item.properties | size %}
+  {% if property_size > 0 %}
+  {% for p in item.properties %}
+  {% assign first_character_in_key = p.first | truncate: 1, '' %}
+  {% unless p.last == blank or first_character_in_key == '_' %}
+  {{ p.first }}:
+  {% if p.last contains '/uploads/' %}
+  <a class="lightbox" href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+   {% else %}
+  {{ p.last }}
+  {% endif %}
+   <br>
+  {% endunless %}
+  {% endfor %}
+  {% endif %}
+
+
+    
+  <a href="{{ routes.cart_url }}" id="cart-notification-button" class="button button--secondary button--full-width">View my Cart</a>
+     <button type="submit" name="checkout">Checkout — {{ cart.total_price | money_with_currency }}</button>
+
+  </div>
+</form>
+
+    
+   
+</div>
+
+
+<script>
+   $(document).ready(function(){
+                  $(".hii").click(function(){
+                     $(".my_cart").hide()
+                   });
+                });
+                    
+</script>
+
+
+  
+		
+		
+		
+           

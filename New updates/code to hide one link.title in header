@@ -1,0 +1,9 @@
+  {% assign a = true %}
+      {% if link.title == "hello" %}
+        {% assign a = false %}
+        {% if customer %}
+          {% assign a = true %}
+          {% endif %}
+        {% endif %}
+      {% if a %}
+      <li>
